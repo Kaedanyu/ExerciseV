@@ -11,6 +11,10 @@ map.on('load', () => {
 
     map.addSource('uoft-data', {
         type: 'geojson',
+        data: 'https://raw.githubusercontent.com/Kaedanyu/ExerciseV/main/wk5-data/buildings.geojson' //URL to buildings.geojson file via github
+    
+        //First part of exercise with text based geoJSON
+        /*
         data: {
             "type": "FeatureCollection",
             "features": [
@@ -29,10 +33,20 @@ map.on('load', () => {
 
                 }
             ]
+        } */
+    });
+
+    map.addLayer({
+        'id': 'buildings-pnt',
+        'type': 'circle',
+        'source': 'buildings-data',
+        'paint': {
+            'circle-radius': 5,
+            'circle-color': '#a24bb8'
         }
     });
 
-
+/*
     map.addLayer({
         'id': 'uoft-pnt',
         'type': 'circle',
@@ -41,5 +55,5 @@ map.on('load', () => {
             'circle-radius': 6,
             'circle-color': '#B42222'
         }
-    });
+    });*/
 });
